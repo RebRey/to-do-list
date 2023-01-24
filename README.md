@@ -26,3 +26,6 @@ Create a to-do-list web app.
 ```
   $ npm install body-parser
 ```
+
+## Methods Used:
+* The **getDay()** method returns the day of the week for the specified date according to local time, where 0 represents Sunday.
