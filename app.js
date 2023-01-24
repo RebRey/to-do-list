@@ -13,8 +13,9 @@ const app = express();
 // STEP 5: Run the server on port 3000
 const port = 3000;
 
-// STEP 6: Use app.listen() and console.log() to check if server is running on given port.
-app.listen(port, function () {
+
+// STEP 7: Create a GET route on the home route.
+app.get("/", function (req, res) {
   // create a variable called today and set it equal to new Date();
   var today = new Date();
   // use the getDay() method.
@@ -28,7 +29,8 @@ app.listen(port, function () {
   }
 });
 
-// STEP 7: Create a GET route on the home route.
-app.get("/", function (req, res) {
-  res.send("Server is running on port " + port + ".");
-});
+// STEP 6: Use app.listen() and console.log() to check if server is running on given port.
+app.listen(port, function () {
+    res.send("Server is running on port " + port + ".");
+  });
+  
