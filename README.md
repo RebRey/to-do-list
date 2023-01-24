@@ -8,9 +8,21 @@ Create a to-do-list web app.
 1) Create the following files:
 * index.html
 * app.js
-2) cd into the current project folder and initialize npm using the command line interface.
+2) cd into the current project folder and initialize npm using the command line interface. This will create a package.json file.
 ```
   $ npm init
 ```
-* this will create a package.json file.
 
+3) Install npm in the current project folder. This will create a package-lock.json file. 
+```
+  $ npm install
+```
+
+4) Install express in the current project folder.
+```
+  $ npm install express
+```
+5) Install body-parser current project folder.
+```
+  $ npm install body-parser
+```
