@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <!-- use an ejs tag to update the date -->
+    <h1><%= kindOfDay %></h1>
+
+    <ul>
+      <!-- use a FOR loop using ejs snippets that lopps through the entre length of the newListItems array and renders a new LI for each item inside the array -->
+      <% for (var i=0; i < newListItems.length; i++) { %>
+      <!-- use an ejs tag newListItems -->
+      <li><%= newListItems[i] %></li>
+      <% } %>
+    </ul>
+
+        <!-- when a user adds a new item through the text input then that item gets saved under the variable named newItem -->
+    <form class="" action="/" method="post">
+      <input type="text" name="newItem" />
+      <!-- when the user clicks the submit button, this will trigger a post request to the home route -->
+      <button type="submit" name="button">Add</button>
+    </form>
+  </body>
 </html>
