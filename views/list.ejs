@@ -1,29 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
-    <link rel="stylesheet" href="/css/styles.css">
-  </head>
-  <body>
-    <!-- use an ejs tag to update the date -->
-    <h1><%= kindOfDay %></h1>
+<!-- ejs header layout -->
+<%- include("header"); -%>
 
-    <ul>
-      <!-- use a FOR loop using ejs snippets that lopps through the entre length of the newListItems array and renders a new LI for each item inside the array -->
-      <% for (var i=0; i < newListItems.length; i++) { %>
-      <!-- use an ejs tag newListItems -->
-      <li><%= newListItems[i] %></li>
-      <% } %>
-    </ul>
+<!-- use an ejs tag to update the date -->
+<div class="box" id="heading">
+  <h1><%= listTitle %></h1>
+</div>
 
-        <!-- when a user adds a new item through the text input then that item gets saved under the variable named newItem -->
-    <form class="" action="/" method="post">
-      <input type="text" name="newItem" />
-      <!-- when the user clicks the submit button, this will trigger a post request to the home route -->
-      <button type="submit" name="button">Add</button>
-    </form>
-  </body>
-</html>
+<div class="box">
+  <!-- use a FOR loop using ejs snippets that loops through the entre length of the newListItems array and renders a new LI for each item inside the array -->
+  <% for (let i=0; i < newListItems.length; i++) { %>
+  <div class="item">
+    <input type="checkbox" />
+    <!-- use an ejs tag newListItems -->
+    <p><%= newListItems[i] %></p>
+    <form action="/deleteItem" method="POST">
+      <button type="submit" name="button" value=<%= newListItems %>>x</button>
+  </form>
+  </div>
+  <% } %>
+
+  <!-- when a user adds a new item through the text input then that item gets saved under the variable named newItem -->
+  <form class="item" action="/" method="post">
+    <input
+      type="text"
+      name="newItem"
+      placeholder="New Item"
+      autocomplete="off"
+      autofocus
+    />
+    <!-- when the user clicks the submit button, this will trigger a post request to the home route -->
+    <button type="submit" name="list" value=<%= listTitle %>>+</button>
+  </form>
+</div>
+
+<!-- ejs footer layout -->
+<%- include("footer"); -%>
