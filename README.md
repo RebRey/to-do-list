@@ -70,3 +70,5 @@ I learned how to:
 ** use an array to store items in a collection
 
 ** add pre-made CSS stylesheets to a website.
+
+** pass functions and data between files by creating local modules and exporting them with node.js

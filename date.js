@@ -1,8 +1,6 @@
 // date generator with weekday, month, and day format
 // export the return value "day" to app.js by using node.js
-module.exports.getDate = getDate;
-
-function getDate(){
+exports.getDate = function(){
 let today = new Date();
 let options = {
   weekday: "long",
@@ -10,22 +8,20 @@ let options = {
   day: "numeric",
 };
 
-let day = today.toLocaleDateString("eng-US", options);
-// function needs the output to be the variable day
-return day;
+// function needs to output the date with the options selected (weekday,month,date)
+return today.toLocaleDateString("eng-US", options);
 };
 
 // date generator with day only format
 // export the return value "day" to app.js by using node.js
 
-module.exports.getWeekDay = getWeekDay;
-function getWeekDay(){
+exports.getWeekDay = function(){
 let today = new Date();
 let options = {
     weekday: "long",
 };
+// function needs to output the date with the options selected (weekday only)
+return today.toLocaleDateString("eng-US", options);
 
-let day = today.toLocaleDateString("eng-US", options);
-// function needs the output to be the variable day
-return day;
+
 };
