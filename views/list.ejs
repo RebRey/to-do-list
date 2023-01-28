@@ -13,8 +13,8 @@
     <input type="checkbox" />
     <!-- use an ejs tag newListItems -->
     <p><%= newListItems[i] %></p>
-    <form action="/deleteItem" method="POST">
-      <button type="submit" name="button" value=<%= newListItems %>>x</button>
+    <form action="/deleteItem" method="post">
+      <button class="remove-item" type="submit" name="delete" value=<%= newListItems %>>x</button>
   </form>
   </div>
   <% } %>

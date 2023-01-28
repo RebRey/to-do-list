@@ -16,10 +16,11 @@ const app = express();
 // STEP 11: Create a variable called news and set it equal to an empty array
 // each time we get a new post request, and a new variable is created called item, then
 // we can append that item to our array called items.
-let items = [];
+// you can push items into an array, you can use the const for declaring the variable
+const items = [];
 
 // Step 14:
-let workItems = [];
+const workItems = [];
 // STEP 5: Use the app.set() method to set the app's view engine to ejs.
 app.set("view engine", "ejs");
 
@@ -39,10 +40,9 @@ app.listen(port, function () {
 
 // STEP 9: Create a GET request on the homepage route
 app.get("/", function (req, res) {
-
   // create a variable called day and set it equal to a function call for date() that is bound to the const date
   // to activate getDate() function
-let day = date.getDate();
+  const day = date.getDate();
 
   //render our list.ejs passing in two variables: one called kindOfDay set to equal day and another
   // called newListItems set to equal to the items array.
@@ -53,7 +53,7 @@ let day = date.getDate();
 app.post("/", function (req, res) {
   // When a post request is triggered, save the value of newItem (input that user provided) to a
   // variable called item
-  let item = req.body.newItem;
+  const item = req.body.newItem;
 
   //
   if (req.body.list === "Work") {
@@ -74,13 +74,17 @@ app.get("/work", function (req, res) {
 });
 
 // STEP 15: set a GET request for the about page
-app.get("/about", function(req, res){
+app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.post("/deleteItem", function(req, res) {
-  let item = req.body.button;
-  items.splice(items.indexOf(item), 1);
-
-  res.redirect("/");
+app.post("/deleteItem", function (req, res){
+  const item = req.body.newItem;
+  if(req.body.list === "Work"){
+      workItems.splice(workItems.indexOf(item), 1);
+      res.redirect("/work");
+  }else{
+      items.splice(items.indexOf(item), 1);
+      res.redirect("/");
+  }
 });
