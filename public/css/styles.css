@@ -68,18 +68,6 @@ button {
   border-width: 0;
 }
 
-.remove-item{
-  align-items: center;
-  min-height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  border-color: transparent;
-  background-color: red;
-  color: #fff;
-  font-size: 12px;
-  border-width: 0;
-}
-
 input[type="text"] {
   text-align: center;
   height: 60px;
